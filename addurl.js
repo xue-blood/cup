@@ -36,7 +36,7 @@ function addurl(title,prefix,element){
 function addbtn(title,element){
 	var b = document.createElement('input');
 	b.value=title;
-	b.setAttribute('data',element.text);
+	b.setAttribute('data',element.href);
 	b.type='button';
 	b.title='Copy url to copyboard';
 	b.style='display:inline';
