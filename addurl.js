@@ -1,9 +1,24 @@
+// ==UserScript==
+// @name         Custom media url
+// @namespace    https://github.com/xue-blood/cup
+// @version      0.3
+// @description  Open media in html in ONE click!
+// @author       doolb
+// @license      MIT
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
 var all = document.querySelectorAll('a');
 for(var i=0;i<all.length;i++){
 	if( all[i].text.indexOf("mp4") != -1 ||
 		all[i].text.indexOf("mkv") != -1 ||
 		all[i].text.indexOf("wmv") != -1){
-		
+
 		addurl('[M]','mpv',all[i]);
 		addurl('[P]','potplayermini64',all[i]);
 		addbtn('[C]',all[i]);
@@ -15,7 +30,7 @@ function addurl(title,prefix,element){
 	a.text = title;
 	a.href = prefix + ':' + element.href;
 	a.title='Open in '+prefix;
-	element.parentElement.insertBefore(a,element)	
+	element.parentElement.insertBefore(a,element);
 }
 
 function addbtn(title,element){
@@ -46,3 +61,7 @@ function copyToClipboard(text) {
   // Remove it from the body
   document.body.removeChild(aux);
 }
+
+
+
+})();
